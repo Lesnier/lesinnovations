@@ -13,7 +13,6 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v3
-    - run: echo 'Serve ${{ secrets.CPANEL_FTP_SERVER }}'  
     - name: Deploy to cPanel
       uses: samkirkland/ftp-deploy-action@v4.3.4
       with:
