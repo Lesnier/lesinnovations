@@ -20,4 +20,4 @@ jobs:
         username: lesinnovations@lesinnovations.tech
         password: kV,#.tNQ(RZ5
         local-dir: . # Directorio raíz de tu sitio en el repositorio
-        server-dir: /lesinnovations.tech # Actualiza según tu estructura en cPanel
+        server-dir: /lesinnovations.tech/ # Actualiza según tu estructura en cPanel
