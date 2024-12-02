@@ -12,7 +12,7 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v3
-
+    - run: echo 'Serve ${{ env.Production.CPANEL_FTP_SERVER }}'  
     - name: Deploy to cPanel
       uses: samkirkland/ftp-deploy-action@v4.3.4
       with:
@@ -20,4 +20,5 @@ jobs:
         username: ${{ secrets.CPANEL_FTP_USER }}
         password: ${{ secrets.CPANEL_FTP_PASSWORD }}
         local-dir: ./ # Directorio raíz de tu sitio en el repositorio
+       
       # server-dir: /lesinnovations.tech/ # Actualiza según tu estructura en cPanel
