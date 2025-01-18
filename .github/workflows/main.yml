@@ -8,16 +8,17 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: Production
 
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v3
-
     - name: Deploy to cPanel
       uses: samkirkland/ftp-deploy-action@v4.3.4
       with:
-        server: 191.101.0.20
-        username: lesinnovations@lesinnovations.tech
-        password: kV,#.tNQ(RZ5
+        server: ${{ secrets.CPANEL_FTP_SERVER }}
+        username: ${{ secrets.CPANEL_FTP_USER }}
+        password: ${{ secrets.CPANEL_FTP_PASSWORD }}
         local-dir: ./ # Directorio raíz de tu sitio en el repositorio
+       
       # server-dir: /lesinnovations.tech/ # Actualiza según tu estructura en cPanel
