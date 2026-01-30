@@ -1,0 +1,72 @@
+/* Global Overrides */
+
+/* Make placeholders lighter */
+::placeholder {
+  color: #aeb0b4 !important;
+  opacity: 1; /* Firefox */
+}
+
+::-ms-input-placeholder { /* Edge 12-18 */
+  color: #aeb0b4 !important;
+}
+
+/* Identity Button Class */
+.btn-identity {
+    background-color: #f39c3e;
+    border-color: #f39c3e;
+    color: #fff;
+}
+.btn-identity:hover {
+    background-color: #d88b35;
+    border-color: #d88b35;
+    color: #fff;
+}
+
+.text-identity {
+    color: #f39c3e !important;
+}
+
+.bg-identity {
+    background-color: #f39c3e !important;
+    color: white;
+}
+
+.btn-outline-identity {
+    color: #f39c3e;
+    border-color: #f39c3e;
+    background-color: transparent;
+}
+.btn-outline-identity:hover {
+    color: #fff;
+    background-color: #f39c3e;
+    border-color: #f39c3e;
+}
+
+/* Mobile Nav Overrides */
+.navbar-mobile ul {
+    background-color: #151515 !important; /* Dark Background */
+    border: 1px solid #333;
+}
+
+.navbar-mobile a, 
+.navbar-mobile a:focus {
+    color: #fff !important; /* White Text */
+    font-size: 18px !important; /* Larger Text */
+    font-weight: 600;
+    text-align: center; /* Center links for better mobile look */
+    border-bottom: 1px solid #222;
+}
+
+.navbar-mobile a:hover, 
+.navbar-mobile .active, 
+.navbar-mobile li:hover > a {
+    color: #fff !important;
+    background-color: #f39c3e !important; /* Identity Orange */
+}
+
+.mobile-nav-toggle {
+    color: #fff; /* Ensure toggle is white */
+}
+.navbar-mobile .mobile-nav-toggle {
+    color: #fff; /* Ensure close icon is white on dark overlay */
+}
