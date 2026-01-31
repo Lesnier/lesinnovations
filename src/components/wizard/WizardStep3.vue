@@ -109,7 +109,7 @@ Nuestra IA analizará las necesidades para generar una estimación preliminar.</
                 </button>
             </div>
             <div class="mt-2">
-                 <small class="text-muted text-uppercase" style="font-size: 0.7em;">Sin compromiso de compra</small>
+                 <small class="text-muted text-uppercase mt-4" style="font-size: 0.7em;">Esto es un sistema automatizado sin supervisión humana</small>
             </div>
         </div>
 

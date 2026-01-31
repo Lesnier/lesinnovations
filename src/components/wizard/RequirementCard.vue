@@ -4,7 +4,7 @@
       <!-- Content Section -->
       <div class="p-3 flex-grow-1 d-flex align-items-center">
         <div class="badge bg-identity rounded-pill me-3 px-3 py-2 price-badge">
-             ${{ adjustedValue }}
+             ${{ req.value }}
         </div>
         <h6 class="mb-0 text-dark">{{ req.text }}</h6>
       </div>
@@ -27,15 +27,10 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
 import { useWizardStore } from '@/stores/wizard';
 
 const props = defineProps(['req']);
 const store = useWizardStore();
-
-const adjustedValue = computed(() => {
-    return Math.round(props.req.value * store.location.multiplier);
-});
 </script>
 
 <style scoped>
