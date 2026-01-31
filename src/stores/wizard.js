@@ -43,8 +43,8 @@ export const useWizardStore = defineStore('wizard', {
       return state.requirements
         .filter(req => req.included)
         .reduce((sum, req) => {
-           const adjustedPrice = Math.round(req.value * state.location.multiplier);
-           return sum + adjustedPrice;
+           // Value is already adjusted by Backend
+           return sum + (Number(req.value) || 0);
         }, 0);
     }
   },
