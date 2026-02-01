@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vueuse/head": "^2.0.0",
     "axios": "^1.13.2",
     "firebase": "^12.8.0",
     "pinia": "^3.0.4",

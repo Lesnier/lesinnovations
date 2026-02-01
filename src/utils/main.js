@@ -178,6 +178,8 @@ export function initMain() {
         delay: 5000,
         disableOnInteraction: false
       },
+      observer: true,
+      observeParents: true,
       slidesPerView: 'auto',
       pagination: {
         el: '.swiper-pagination',

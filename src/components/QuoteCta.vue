@@ -1,19 +1,19 @@
 <template>
-  <!-- ======= Cta Section ======= -->
-  <section id="cta" class="quote-cta-section">
+  <!-- ======= Quote Cta Section ======= -->
+  <section id="quote-cta" class="quote-cta-section">
     <div class="container" data-aos="zoom-in">
       <div class="quote-card d-flex align-items-center justify-content-between flex-column flex-md-row">
         <div class="quote-text text-center text-md-start mb-4 mb-md-0">
-          <h3>Transforma tu visión en realidad</h3>
-          <p>¡Contáctanos hoy y da el siguiente paso hacia una solución personalizada que impulse tu negocio!</p>
+          <h3>¿Tienes una idea en mente?</h3>
+          <p>Cotiza tu proyecto con nosotros y descubre cómo podemos ayudarte a hacerlo realidad.</p>
         </div>
-        <a class="btn btn-identity py-3 px-5 rounded-pill shadow-sm fw-bold" href="https://wa.link/v7ekf8" target="_blank">
-           <i class="bi bi-whatsapp me-2"></i> Enviar Mensaje
-        </a>
+        <router-link class="btn btn-identity py-3 px-5 rounded-pill shadow-sm fw-bold" to="/wizard">
+           Cotizar Ahora
+        </router-link>
       </div>
     </div>
   </section>
-  <!-- End Cta Section -->
+  <!-- End Quote Cta Section -->
 </template>
 
 <script setup>
@@ -55,12 +55,5 @@
   text-transform: uppercase;
   color: #fff;
   white-space: nowrap;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn-identity i {
-  font-size: 1.2rem;
 }
 </style>

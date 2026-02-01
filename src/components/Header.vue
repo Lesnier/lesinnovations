@@ -8,12 +8,12 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0" :class="{ 'navbar-mobile': isMobileNavOpen }">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero" @click="closeMobileNav">inicio</a></li>
-          <li><a class="nav-link scrollto" href="#about" @click="closeMobileNav">Nosotros</a></li>
-          <li><a class="nav-link scrollto" href="#services" @click="closeMobileNav">Servicios</a></li>
-          <li><a class="nav-link scrollto" href="#portfolio" @click="closeMobileNav">Portafolio</a></li>
-          <li><a class="nav-link scrollto" href="#team" @click="closeMobileNav">Tecnologías</a></li>
-          <li><a class="nav-link scrollto" href="#contact" @click="closeMobileNav">Contacto</a></li>
+          <li><a class="nav-link scrollto active" href="#hero" @click="handleNavClick($event)">inicio</a></li>
+          <li><a class="nav-link scrollto" href="#about" @click="handleNavClick($event)">Nosotros</a></li>
+          <li><a class="nav-link scrollto" href="#services" @click="handleNavClick($event)">Servicios</a></li>
+          <li><a class="nav-link scrollto" href="#portfolio" @click="handleNavClick($event)">Portafolio</a></li>
+          <li><a class="nav-link scrollto" href="#team" @click="handleNavClick($event)">Tecnologías</a></li>
+          <li><a class="nav-link scrollto" href="#contact" @click="handleNavClick($event)">Contacto</a></li>
         </ul>
         <i 
           class="bi mobile-nav-toggle" 
@@ -22,6 +22,8 @@
         ></i>
       </nav>
       <!-- .navbar -->
+
+      <router-link to="/wizard" class="get-started-btn scrollto">Cotizar Ahora</router-link>
     </div>
   </header>
   <!-- End Header -->
@@ -29,6 +31,10 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+
+const route = useRoute();
+const router = useRouter();
 
 const isMobileNavOpen = ref(false);
 
@@ -38,5 +44,16 @@ function toggleMobileNav() {
 
 function closeMobileNav() {
   isMobileNavOpen.value = false;
+}
+
+function handleNavClick(e) {
+  closeMobileNav();
+  if (route.path !== '/') {
+    e.preventDefault();
+    const hash = e.currentTarget.getAttribute('href');
+    if (hash) {
+      router.push({ path: '/', hash: hash });
+    }
+  }
 }
 </script>

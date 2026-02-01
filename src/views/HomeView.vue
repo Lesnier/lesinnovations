@@ -1,6 +1,7 @@
 <template>
   <Hero />
   <main id="main">
+    <QuoteCta />
     <About />
     <Clients />
     <Features />
@@ -16,6 +17,7 @@
 
 <script setup>
 import Hero from '@/components/Hero.vue';
+import QuoteCta from '@/components/QuoteCta.vue';
 import About from '@/components/About.vue';
 import Clients from '@/components/Clients.vue';
 import Features from '@/components/Features.vue';
