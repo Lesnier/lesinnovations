@@ -108,8 +108,8 @@ Nuestra IA analizará las necesidades para generar una estimación preliminar.</
                     {{ finishing ? 'Procesando...' : '¡Hablemos!' }}
                 </button>
             </div>
-            <div class="mt-2">
-                 <small class="text-muted text-uppercase mt-4" style="font-size: 0.7em;">Esto es un sistema automatizado sin supervisión humana</small>
+            <div class="mt-4">
+                 <small class="text-muted text-uppercase" style="font-size: 0.7em;">Esto es un sistema automatizado; hable con un asesor.</small>
             </div>
         </div>
 
