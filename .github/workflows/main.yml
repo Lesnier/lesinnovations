@@ -1,1 +1,54 @@
-ok
+name: Deploy Vue Frontend
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Setup SSH Agent
+        env:
+          SSH_PASS: ${{ secrets.SSH_PASSPHRASE }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          
+          # Start ssh-agent
+          eval $(ssh-agent -s)
+          echo "SSH_AUTH_SOCK=$SSH_AUTH_SOCK" >> $GITHUB_ENV
+          echo "SSH_AGENT_PID=$SSH_AGENT_PID" >> $GITHUB_ENV
+          
+          # Use SSH_ASKPASS to feed the passphrase
+          echo 'echo "$SSH_PASS"' > ~/.ssh/askpass
+          chmod +x ~/.ssh/askpass
+          export SSH_ASKPASS=~/.ssh/askpass
+          export DISPLAY=:0
+          
+          ssh-add ~/.ssh/id_rsa
+
+      - name: Adding Known Hosts
+        run: ssh-keyscan -p ${{ secrets.SERVER_PORT || 22 }} -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy with rsync
+        # Deploy ONLY the dist/ folder to the server root for the domain
+        run: rsync -avz --delete -e "ssh" ./dist/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/home/keywordcv/lesinnovations.tech/
