@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // API URL (Default to Production, override with VITE_API_URL in .env)
-const API_URL = import.meta.env.VITE_API_URL || "http://admin.lesinnovations.tech/api";
+const API_URL = import.meta.env.VITE_API_URL;
 
 
 // --- LARAVEL API ---
