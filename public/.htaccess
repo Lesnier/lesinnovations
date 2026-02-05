@@ -6,3 +6,6 @@
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /index.html [L]
 </IfModule>
+
+# Prevent directory listing (Security)
+Options -Indexes

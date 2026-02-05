@@ -18,24 +18,24 @@ import Footer from './components/Footer.vue';
 const route = useRoute();
 
 useHead({
-  title: 'Les Innovations - Agency',
+  title: 'Les Innovations - Soluciones a Medida de Software e IA',
   meta: [
-    { name: 'description', content: 'Les Innovations ofrece soluciones de software a medida con tecnología de vanguardia. Nos especializamos en desarrollo de software, inteligencia artificial, aplicaciones móviles, realidad aumentada y más. Con más de 10 años de experiencia, convertimos visiones en éxitos.' },
-    { name: 'keywords', content: 'soluciones de software, desarrollo de software, inteligencia artificial, aplicaciones móviles, realidad aumentada, VR, AR, MR, inteligencia de negocio, consultoría, desarrollo web, front end, back end, devops, cloud, base de datos, analítica' },
+    { name: 'description', content: 'Les Innovations convierte visiones en éxitos. Especialistas en desarrollo de software, inteligencia artificial (IA), aplicaciones móviles y transformación digital. Consultoría experta en Ecuador y el mundo.' },
+    { name: 'keywords', content: 'les innovations, desarrollo de software, inteligencia artificial, ia, software ecuador, aplicaciones móviles, realidad aumentada, transformación digital, consultoría tecnológica, web development' },
     { name: 'author', content: 'Les Innovations' },
     { name: 'robots', content: 'index, follow' },
     // Open Graph
-    { property: 'og:title', content: 'Les Innovations - Soluciones a Medida, Innovación sin Límites' },
-    { property: 'og:description', content: 'Convertimos visiones en éxitos mediante software innovador y a medida. Descubre nuestras soluciones de software a medida, inteligencia artificial, aplicaciones móviles, y más.' },
-    { property: 'og:image', content: 'https://admirable-heliotrope-b89c6b.netlify.app/assets/img/services/Les_Innovation.png' },
-    { property: 'og:url', content: 'https://admirable-heliotrope-b89c6b.netlify.app/' },
+    { property: 'og:title', content: 'Les Innovations - Soluciones Software e Inteligencia Artificial' },
+    { property: 'og:description', content: 'Expertos en convertir ideas en realidad. Desarrollo de software a medida, IA, Apps y estrategias digitales de alto impacto.' },
+    { property: 'og:image', content: 'https://lesinnovations.tech/assets/img/services/Les_Innovation.png' },
+    { property: 'og:url', content: 'https://lesinnovations.tech/' },
     { property: 'og:type', content: 'website' },
     { property: 'og:site_name', content: 'Les Innovations' },
     // Twitter Card
     { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:title', content: 'Les Innovations - Soluciones a Medida, Innovación sin Límites' },
-    { name: 'twitter:description', content: 'Convertimos visiones en éxitos mediante software innovador y a medida. Descubre nuestras soluciones de software a medida, inteligencia artificial, aplicaciones móviles, y más.' },
-    { name: 'twitter:image', content: 'https://admirable-heliotrope-b89c6b.netlify.app/assets/img/services/Les_Innovation.png' }
+    { name: 'twitter:title', content: 'Les Innovations - Software a Medida e IA' },
+    { name: 'twitter:description', content: 'Potencia tu negocio con software innovador y estrategias de IA. Contáctanos.' },
+    { name: 'twitter:image', content: 'https://lesinnovations.tech/assets/img/services/Les_Innovation.png' }
   ]
 })
 
