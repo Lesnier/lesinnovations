@@ -39,9 +39,17 @@ useHead({
   ]
 })
 
-onMounted(() => {
+import { useWizardStore } from '@/stores/wizard';
+
+// ... other imports
+
+onMounted(async () => {
   // Initial load
   reInitMain();
+  
+  // Restore wizard progress
+  const wizardStore = useWizardStore();
+  await wizardStore.loadProgress();
 });
 
 // Watch for route changes to re-initialize scripts (scroll, isotope, etc) if needed

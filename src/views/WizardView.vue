@@ -61,11 +61,39 @@ const progressPercentage = computed(() => {
 
 onMounted(() => {
     store.initLocation();
+    
+    // Track Wizard Start
+    if (window.gtag) {
+        window.gtag('event', 'wizard_start', {
+            event_category: 'engagement',
+            event_label: 'Started Wizard'
+        });
+
+        // Track Step 1 explicitly on load if currentStep is 1
+        if (store.currentStep === 1) {
+           window.gtag('event', 'wizard_step_view', {
+              step: 1,
+              step_name: 'Contact Info'
+           });
+        }
+    }
 });
 
 // Scroll to top when step changes
-watch(() => store.currentStep, () => {
+watch(() => store.currentStep, (newStep) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    if (window.gtag) {
+        let stepName = '';
+        if (newStep === 1) stepName = 'Contact Info';
+        if (newStep === 2) stepName = 'Objectives';
+        if (newStep === 3) stepName = 'Estimator';
+
+        window.gtag('event', 'wizard_step_view', {
+            step: newStep,
+            step_name: stepName
+        });
+    }
 });
 </script>
 

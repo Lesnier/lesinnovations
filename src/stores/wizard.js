@@ -57,9 +57,40 @@ export const useWizardStore = defineStore('wizard', {
       }
     },
 
+    async loadProgress() {
+      const saved = localStorage.getItem('wizard_progress');
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved);
+          // Merge saved state into current state
+          this.$patch(parsed);
+          
+          // Validation: Ensure currentStep is valid
+          if (!this.currentStep || this.currentStep < 1 || this.currentStep > 3) {
+             console.warn('Invalid step loaded, resetting to 1');
+             this.currentStep = 1;
+          }
+
+          console.log('Wizard progress loaded from localStorage');
+        } catch (e) {
+          console.error('Failed to load wizard progress', e);
+          // Reset on error
+          this.currentStep = 1;
+        }
+      }
+    },
+
     async saveProgress() {
+      // Save current state to localStorage
+      try {
+        localStorage.setItem('wizard_progress', JSON.stringify(this.$state));
+        console.log('Wizard progress saved to localStorage');
+      } catch (e) {
+        console.error('Failed to save wizard progress', e);
+      }
+      
       // Placeholder for Firebase persistence
-      console.log('Saving progress to Firebase...', this.$state);
+      // console.log('Saving progress to Firebase...', this.$state);
       // await saveToFirebase(this.$state);
     },
 

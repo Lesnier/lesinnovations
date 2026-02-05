@@ -14,7 +14,10 @@ Nuestra IA analizará las necesidades para generar una estimación preliminar.</
           rows="5" 
           placeholder="Ej: Necesito una app tipo Uber para paseadores de perros..."
        ></textarea>
-       <div class="d-flex justify-content-end">
+       <div class="d-flex justify-content-between align-items-center">
+          <button type="button" class="btn btn-outline-secondary" @click="prevStep">
+              <i class="bi bi-arrow-left"></i> Volver
+          </button>
           <button class="btn btn-identity shadow-sm" @click="analyzeRequirements" :disabled="analyzing">
             <span v-if="analyzing" class="spinner-border spinner-border-sm me-2"></span>
             <i v-else class="bi bi-stars me-2"></i>
@@ -242,6 +245,16 @@ const budgetCompatibility = computed(() => {
 
 async function finishWizard() {
   finishing.value = true;
+  
+  // Track Final Conversion Click
+  if (window.gtag) {
+      window.gtag('event', 'wizard_completion_click', {
+          event_category: 'conversion',
+          event_label: 'Clicked Hablemos',
+          value: store.totalEstimate
+      });
+  }
+  
   try {
       // 1. Prepare Payload using Store State
       const payload = {
