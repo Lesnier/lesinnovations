@@ -36,6 +36,13 @@ import { useWizardStore } from '@/stores/wizard';
 const store = useWizardStore();
 
 function nextStep() {
+  if (window.gtag) {
+      window.gtag('event', 'wizard_contact_submitted', {
+          event_category: 'engagement',
+          event_label: 'Step 1 Complete',
+          location: store.location?.countryName || 'Unknown' 
+      });
+  }
   store.currentStep = 2;
   store.saveProgress();
 }

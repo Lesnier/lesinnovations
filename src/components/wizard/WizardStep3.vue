@@ -134,6 +134,14 @@ const analyzing = ref(false);
 
 async function analyzeRequirements() {
   console.log("Analyze clicked. Description:", store.projectDescription);
+  
+  if (window.gtag) {
+     window.gtag('event', 'wizard_analysis_click', {
+        event_category: 'interaction',
+        event_label: 'Start AI Analysis'
+     });
+  }
+
   if (!store.projectDescription) {
       console.warn("Description empty, aborting.");
       return;
@@ -171,6 +179,13 @@ async function analyzeRequirements() {
 }
 
 function prevStep() {
+  if (window.gtag) {
+      const isAdjustment = store.requirements.length > 0;
+      window.gtag('event', isAdjustment ? 'wizard_adjust_click' : 'wizard_analysis_back_click', {
+          event_category: 'navigation',
+          event_label: isAdjustment ? 'Adjust Estimate' : 'Back from Step 3'
+      });
+  }
   store.currentStep = 2;
 }
 

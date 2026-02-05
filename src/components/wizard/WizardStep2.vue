@@ -132,11 +132,27 @@ const budgetOptions = [
 ];
 
 function nextStep() {
+  if (window.gtag) {
+      window.gtag('event', 'wizard_objectives_submitted', {
+          event_category: 'engagement',
+          event_label: 'Step 2 Complete',
+          services: store.objectives.services.join(','),
+          goals: store.objectives.goals.join(','),
+          budget: store.objectives.budget,
+          timeline: store.objectives.timeline
+      });
+  }
   store.currentStep = 3;
   store.saveProgress();
 }
 
 function prevStep() {
+  if (window.gtag) {
+      window.gtag('event', 'wizard_back_click', {
+          event_category: 'navigation',
+          event_label: 'Back from Step 2'
+      });
+  }
   store.currentStep = 1;
 }
 </script>
