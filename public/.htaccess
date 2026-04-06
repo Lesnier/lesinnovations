@@ -1,6 +1,11 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+
+  # Redirigir www a no-www (canonical URL para Google)
+  RewriteCond %{HTTP_HOST} ^www\.lesinnovations\.tech [NC]
+  RewriteRule ^ https://lesinnovations.tech%{REQUEST_URI} [L,R=301]
+
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d

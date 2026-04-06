@@ -19,6 +19,9 @@ const route = useRoute();
 
 useHead({
   title: 'Les Innovations | Agencia de Desarrollo de Software a Medida e IA',
+  link: [
+    { rel: 'canonical', href: 'https://lesinnovations.tech/' }
+  ],
   meta: [
     { name: 'description', content: 'Les Innovations es una agencia B2B experta en desarrollo de software a medida, aplicaciones móviles empresariales (iOS/Android), integración de Inteligencia Artificial (IA) y plataformas corporativas (ERP/CRM). Convertimos visiones en éxitos.' },
     { name: 'keywords', content: 'desarrollo de software a medida, agencia de inteligencia artificial, desarrollo de aplicaciones corporativas, desarrollo de apps B2B, consultoría IT, modernización de sistemas empresariales, desarrollo ERP CRM, empresa de desarrollo de software, automatización de procesos con IA, VR para negocios, les innovations, software ecuador, transformación digital' },
