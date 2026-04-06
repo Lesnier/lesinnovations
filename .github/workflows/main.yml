@@ -51,4 +51,4 @@ jobs:
 
       - name: Deploy with rsync
         # Deploy ONLY the dist/ folder to the server root for the domain
-        run: rsync -avz --delete -e "ssh" ./dist/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/home/keywordcv/lesinnovations.tech/
+        run: rsync -avz --delete -e "ssh" ./dist/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/www/wwwroot/lesinnovations.tech/
