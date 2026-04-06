@@ -53,36 +53,143 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Les Innovations",
-        "url": "https://lesinnovations.tech/",
-        "logo": "https://lesinnovations.tech/assets/img/services/Les_Innovation.png",
-        "description": "Les Innovations ofrece soluciones de software a medida con tecnología de vanguardia. Nos especializamos en desarrollo de software, inteligencia artificial, aplicaciones móviles, realidad aumentada y más. Con más de 10 años de experiencia, convertimos visiones en éxitos.",
-        "sameAs": ["https://www.facebook.com/profile.php?id=61552453340622", "https://www.linkedin.com/in/lesnier-gonzalez/", "URL_DE_TU_TWITTER", "URL_DE_TU_INSTAGRAM"],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+593986667563",
-          "contactType": "Customer Service",
-          "areaServed": "Worldwide",
-          "availableLanguage": ["Spanish", "English"]
-        }
-      }
-    </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "url": "https://lesinnovations.tech/",
-        "name": "Les Innovations",
-        "description": "Convertimos visiones en éxitos mediante software innovador y a medida. Descubre nuestras soluciones de software a medida, inteligencia artificial, aplicaciones móviles, y más.",
-        "publisher": {
-          "@type": "Organization",
-          "name": "Les Innovations",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://lesinnovations.tech/assets/img/services/Les_Innovation.png"
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://lesinnovations.tech/#organization",
+            "name": "Les Innovations",
+            "url": "https://lesinnovations.tech/",
+            "logo": "https://lesinnovations.tech/assets/img/services/Les_Innovation.png",
+            "description": "Les Innovations ofrece soluciones de software a medida con tecnología de vanguardia. Nos especializamos en desarrollo de software, inteligencia artificial, aplicaciones móviles, realidad aumentada y más. Con más de 10 años de experiencia, convertimos visiones en éxitos.",
+            "sameAs": [
+              "https://www.facebook.com/profile.php?id=61552453340622",
+              "https://www.linkedin.com/in/lesnier-gonzalez/"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+593986667563",
+              "contactType": "Customer Service",
+              "areaServed": "Worldwide",
+              "availableLanguage": ["Spanish", "English"]
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Nuestros Servicios",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Software a Medida",
+                    "description": "Creamos plataformas web, de escritorio, modernización de sistemas existentes, Landing Page para tu funnel de marketing."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Inteligencia Artificial & Machine Learning",
+                    "description": "Potenciamos tu solución con los modelos de Inteligencia Artificial mejores entrenados, elevando competitividad y eficiencia."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "App Móviles Android & iOS",
+                    "description": "Desarrollamos aplicaciones móviles con diseño UX/UI/IxD que se adaptan a las últimas tendencias y tecnologías emergentes."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Realidad Virtual, Aumentada y Videojuegos",
+                    "description": "Gamificación en modelos de negocios. Soluciones avanzadas basadas en Unity3D."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Inteligencia de Negocio (BI)",
+                    "description": "Creamos el panel de mando de tu negocio para el análisis estadístico, basado en tus procesos."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Consultoría y Análisis IT",
+                    "description": "Te ayudamos a identificar oportunidades y optimizar estrategias para despegar rápido y eficientemente."
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://lesinnovations.tech/#website",
+            "url": "https://lesinnovations.tech/",
+            "name": "Les Innovations",
+            "description": "Convertimos visiones en éxitos mediante software innovador y a medida.",
+            "publisher": {
+              "@id": "https://lesinnovations.tech/#organization"
+            }
+          },
+          {
+            "@type": "ItemList",
+            "name": "Portafolio de Proyectos Les Innovations",
+            "description": "Explora nuestra galería de proyectos de software a medida, apps móviles y realidad virtual.",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                  "@type": "CreativeWork",
+                  "name": "App Móvil de Gestión",
+                  "image": "https://lesinnovations.tech/assets/img/portfolio/portfolio-1.jpg"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                  "@type": "CreativeWork",
+                  "name": "Plataforma Web Corporativa",
+                  "image": "https://lesinnovations.tech/assets/img/portfolio/portfolio-2.jpg"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                  "@type": "CreativeWork",
+                  "name": "Aplicación iOS y Android",
+                  "image": "https://lesinnovations.tech/assets/img/portfolio/portfolio-3.jpg"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "item": {
+                  "@type": "CreativeWork",
+                  "name": "Sistema de Diseño UX/UI",
+                  "image": "https://lesinnovations.tech/assets/img/portfolio/portfolio-4.jpg"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "item": {
+                  "@type": "CreativeWork",
+                  "name": "Experiencia en Realidad Virtual",
+                  "image": "https://lesinnovations.tech/assets/img/portfolio/portfolio-5.jpg"
+                }
+              }
+            ]
           }
-        }
+        ]
       }
     </script>
   </head>
