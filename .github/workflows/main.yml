@@ -51,4 +51,5 @@ jobs:
 
       - name: Deploy with rsync
         # Deploy ONLY the dist/ folder to the server root for the domain
-        run: rsync -avz --delete -e "ssh" ./dist/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/www/wwwroot/lesinnovations.tech/
+        # Excluir archivos del servidor que no deben ser borrados (como .user.ini)
+        run: rsync -avz --delete --exclude='.user.ini' --exclude='.htaccess' -e "ssh" ./dist/ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/www/wwwroot/lesinnovations.tech/
