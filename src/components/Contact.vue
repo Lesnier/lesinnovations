@@ -33,9 +33,19 @@
         <div class="col-md-3">
           <div class="info">
             <div class="phone">
-              <i class="bi bi-phone"></i>
-              <h4>Llámanos:</h4>
-              <a href="call:+593987705803" target="_blank"><p>+593 98 770 58 03</p></a>
+              <i class="bi bi-share"></i>
+              <h4>Redes Sociales:</h4>
+              <div style="font-size: 12px; padding-left: 60px;">
+                <a href="https://www.facebook.com/lesinnovations" target="_blank" title="Facebook">
+                  Facebook -
+                </a>
+                <a href="https://www.instagram.com/lesinnovations" target="_blank" title="Instagram">
+                  Instagram -
+                </a>
+                <a href="https://www.linkedin.com/company/lesinnovations" target="_blank" title="LinkedIn">
+                  LinkedIn
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -44,7 +54,7 @@
             <div class="phone">
               <i class="bi bi-whatsapp"></i>
               <h4>Whatsapp:</h4>
-              <a href="https://wa.link/08ug55" target="_blank"><p>+593 98 666 75 63</p></a>
+              <a href="https://wa.link/08ug55" target="_blank"><p>+593 99 882 63 07</p></a>
             </div>
           </div>
         </div>
@@ -81,3 +91,41 @@
 
 <script setup>
 </script>
+
+<style scoped>
+.social-links-contact {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.social-links-contact a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(29, 78, 216, 0.1);
+  color: #1d4ed8;
+  font-size: 1.1rem;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.social-links-contact a:hover {
+  background: #1d4ed8;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.social-links-contact a[title="Instagram"]:hover {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: #fff;
+}
+
+.social-links-contact a[title="LinkedIn"]:hover {
+  background: #0077b5;
+  color: #fff;
+}
+</style>

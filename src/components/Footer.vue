@@ -67,6 +67,9 @@
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/ -->
         Designed by <a href="https://www.linkedin.com/in/lesnier-gonzalez/" target="_blank">Lesnier González López</a>
       </div>
+      <div class="privacy-link">
+        <RouterLink to="/politica-de-privacidad">Política de Privacidad</RouterLink>
+      </div>
     </div>
   </footer>
   <!-- End Footer -->
@@ -74,3 +77,22 @@
 
 <script setup>
 </script>
+
+<style scoped>
+.privacy-link {
+  text-align: center;
+  margin-top: 6px;
+}
+
+.privacy-link a {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.privacy-link a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+</style>

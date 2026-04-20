@@ -21,6 +21,11 @@ const router = createRouter({
       path: '/scheduling',
       name: 'scheduling',
       component: () => import('../views/SchedulingView.vue')
+    },
+    {
+      path: '/politica-de-privacidad',
+      name: 'privacy-policy',
+      component: () => import('../views/PrivacyPolicyView.vue')
     }
   ],
   scrollBehavior(to, from, savedPosition) {
